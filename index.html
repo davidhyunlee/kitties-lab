@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html ng-app="KittiesApp">
+	<head>
+		<title>Kitties App!</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/normalize.css">
+		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	</head>
+
+	<body ng-controller="KittiesController as kitties">
+
+		<div id="topcontainer">
+			<h1>Add a Cat!</h1>
+			<input type="text" ng-model="kitties.newCat" placeholder="Name of cat.." /><br />
+			<input type="text" ng-model="kitties.monthsOld" placeholder="How many months old?" /><br />
+			<input type="text" ng-model="kitties.image" placeholder="URL to image" /><br />
+			Gender: 
+			<select ng-model="kitties.gender">
+				<option ng-model="kitties.gender" value="boy">boy</option>
+				<option ng-model="kitties.gender" value="girl">girl</option>
+			</select><br /><br />
+			<button ng-click="kitties.add()">Add {{ kitties.newCat }}</button>
+		</div>
+
+		<div id="container">
+			<div class="left-container">
+				<h1>Kitties for Adoption</h1>
+				<div class="catlisting" ng-repeat="cats in kitties.Kitties | filter: false">
+					<p>My name is {{ cats.catName }}.</p>
+					<p>I am {{ cats.monthsOld }}.</p>
+					<p>I am a {{ cats.gender }}.</p>
+					<img src=" {{cats.image }}" />
+					<br />
+					<p>Adopt? <input type="checkbox" ng-model="cats.adopted"></p>
+					<button ng-click="kitties.remove($index)">Delete {{ cats.catName }}</button>
+				</div>
+			</div>
+			<div class="right-container">
+				<h1>Kitties at their forever homes <3</h1>
+				<div class="catlisting" ng-repeat="cats in kitties.Kitties | filter: true">
+					<p>My name is {{ cats.catName }}.</p>
+					<p>I am {{ cats.monthsOld }}.</p>
+					<p>I am a {{ cats.gender }}.</p>
+					<img src=" {{cats.image }}" />
+					<br />
+					<p>Adopt? <input type="checkbox" ng-model="cats.adopted"></p>
+					<button ng-click="kitties.remove($index)">Delete {{ cats.catName }}</button>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/KittiesController.js"></script>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+/*@import a Google Font here!*/
+
+body {
+	background: url('../images/background.png');
+	font-family: 'Pacifico', cursive;
+	padding-top: 20px;
+}
+
+#topcontainer {
+	width: 250px;
+	height: auto;
+	margin: 0 auto;
+	border: 1px solid #69A9C1;
+	border-radius: 50px;
+	padding: 20px;
+	background: white;
+	text-align: center;
+}
+
+#container {
+	width: 1000px;
+	height: auto;
+	text-align: center;
+	margin: 0 auto;
+	vertical-align: top;
+}
+
+.dashed {
+
+}
+
+.left-container, .right-container {
+	display: inline-block;
+	width: 380px;
+	background-color: #fff;
+	margin: 8px;
+	border: 1px solid #69A9C1;
+	border-radius: 50px;
+	vertical-align: top;
+}
+
+.catlisting {
+	background-color: #fff;
+	width: auto;
+	height: auto;
+	text-align: center;
+	margin: 10px;
+	border: 1px dashed pink;
+	border-radius: 50px;
+}
+
+h1 {
+	
+}
